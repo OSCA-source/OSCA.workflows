@@ -1,0 +1,28 @@
+Package: OSCA.workflows
+Title: OSCA Workflows
+Version: 0.99.0
+Date: 2021-01-17
+Authors@R: c( 
+        person('Robert', 'Amezquita', role = c('aut')), 
+        person('Aaron', 'Lun', role = c('aut', 'cre'), email="infinite.monkeys.with.keyboards@gmail.com"), 
+        person('Stephanie', 'Hicks', role = 'aut'), 
+        person('Raphael', 'Gottardo', role = 'aut') 
+    )
+Description: 
+    Deploys the workflows of the "Orchestrating Single Cell Analysis with Bioconductor" book.
+    This contains worked case studies of analyses of a variety of single-cell datasets, each proceeding from a SingleCellExperiment object.
+    Exposition is generally minimal other than for dataset-specific justifications for parameter tweaks;
+    refer to the rest of the book for a detailed explanation of the theoretical basis of each step.
+Depends: 
+    rebook
+Suggests: 
+    BiocManager,
+    rmarkdown,
+    knitr
+VignetteBuilder: knitr
+License: CC BY
+URL: https://github.com/LTLA/OSCA.workflows
+biocViews: 
+    ImmunoOncologyWorkflow,
+    Workflow, 
+    SingleCellWorkflow
