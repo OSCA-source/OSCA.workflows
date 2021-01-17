@@ -13,8 +13,39 @@ Description:
     This contains worked case studies of analyses of a variety of single-cell datasets, each proceeding from a SingleCellExperiment object.
     Exposition is generally minimal other than for dataset-specific justifications for parameter tweaks;
     refer to the rest of the book for a detailed explanation of the theoretical basis of each step.
-Depends: 
-    rebook
+Depends: AnnotationHub,
+    batchelor,
+    BiocFileCache,
+    BiocNeighbors,
+    BiocParallel,
+    BiocSingular,
+    bluster,
+    celldex,
+    cluster,
+    DropletTestFiles,
+    DropletUtils,
+    dynamicTreeCut,
+    edgeR,
+    EnsDb.Hsapiens.v86,
+    gridExtra,
+    HCAData,
+    igraph,
+    limma,
+    MouseGastrulationData,
+    org.Hs.eg.db,
+    org.Mm.eg.db,
+    pheatmap,
+    rebook,
+    rmarkdown,
+    scater,
+    scPCA,
+    scran,
+    scRNAseq,
+    scuttle,
+    SingleR,
+    TENxPBMCData,
+    TSCAN,
+    viridis
 Suggests: 
     BiocManager,
     rmarkdown,
