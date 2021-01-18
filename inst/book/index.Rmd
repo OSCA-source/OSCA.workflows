@@ -4,9 +4,8 @@ documentclass: book
 bibliography: ref.bib
 biblio-style: apalike
 link-citations: yes
-favicon: "favicon.ico"
-cover-image: "https://github.com/Bioconductor/BiocStickers/raw/master/Bioconductor/Bioconductor-serial.gif"
-github-repo: Bioconductor/OrchestratingSingleCellAnalysis
+favicon: "`r rebook::BiocFavicon()`"
+github-repo: LTLA/OSCA.workflows
 ---
 
 ```{r, echo=FALSE}
@@ -20,7 +19,7 @@ url: "`r .gh_url`"
 
 # Welcome {-}
 
-<a href="https://bioconductor.org"><img src="`r rmarkdown::metadata[["cover-image"]]`" width="200" alt="Bioconductor Sticker" align="right" style="margin: 0 1em 0 1em" /></a> 
+<a href="https://bioconductor.org"><img src="`r rebook::BiocSticker(mode='animated')`" width="200" alt="Bioconductor Sticker" align="right" style="margin: 0 1em 0 1em" /></a> 
 
 This site contains the workflow chapters of the `r BiocStyle::Biocbook("OSCA", label='__"Orchestrating Single-Cell Analysis with Bioconductor"__ book')`.
 It contains worked case studies of analyses of a variety of single-cell datasets, each proceeding from a `SingleCellExperiment` object.
