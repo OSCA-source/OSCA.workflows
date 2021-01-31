@@ -22,6 +22,11 @@ url: "`r .gh_url`"
 <a href="https://bioconductor.org"><img src="`r rebook::BiocSticker(mode='animated')`" width="200" alt="Bioconductor Sticker" align="right" style="margin: 0 1em 0 1em" /></a> 
 
 This site contains the workflow chapters of the `r BiocStyle::Biocbook("OSCA", label='__"Orchestrating Single-Cell Analysis with Bioconductor"__ book')`.
-It contains worked case studies of analyses of a variety of single-cell datasets, each proceeding from a `SingleCellExperiment` object.
-Exposition is generally minimal other than for dataset-specific justifications for parameter tweaks;
-refer to the rest of the book for a detailed explanation of the theoretical basis of each step.
+```{r, results="asis", echo=FALSE}
+text <- packageDescription("OSCA.workflows")$Description
+remainders <- strsplit(text, "\\.\\s")[[1]][-1]
+remainders <- gsub("SingleCellExperiment", "`SingleCellExperiment`", remainders)
+remainders <- sub("^\\s+", "", remainders)
+remainders <- paste(remainders, collapse=". ")
+cat(remainders, sep="\n")
+```
