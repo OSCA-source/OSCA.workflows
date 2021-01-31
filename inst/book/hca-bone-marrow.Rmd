@@ -8,7 +8,7 @@ chapterPreamble(cache=TRUE)
 ## Introduction
 
 Here, we use an example dataset from the [Human Cell Atlas immune cell profiling project on bone marrow](https://preview.data.humancellatlas.org), which contains scRNA-seq data for 380,000 cells generated using the 10X Genomics technology.
-This is a fairly big dataset that represents a good use case for the techniques in Chapter \@ref(dealing-with-big-data).
+This is a fairly big dataset that represents a good use case for the techniques in `r link("dealing-with-big-data", "OSCA.advanced")`.
 
 ## Data loading
 

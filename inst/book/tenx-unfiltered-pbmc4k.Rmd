@@ -36,7 +36,7 @@ location <- mapIds(EnsDb.Hsapiens.v86, keys=rowData(sce.pbmc)$ID,
 
 ## Quality control
 
-We perform cell detection using the `emptyDrops()` algorithm, as discussed in Section \@ref(qc-droplets).
+We perform cell detection using the `emptyDrops()` algorithm, as discussed in `r link("qc-droplets", "OSCA.advanced")`.
 
 ```{r cell-detection}
 set.seed(100)

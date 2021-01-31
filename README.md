@@ -21,5 +21,5 @@ The updates are usually handled by the GitHub Action but can be done manually wi
 
 ```r
 rebook::updateDependencies("inst/book", path='DESCRIPTION')
-rebook::configureBook(prefix="Introduction")
+rebook::configureBook(prefix="Workflow")
 ```
