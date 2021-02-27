@@ -176,7 +176,7 @@ Doing so yields a trajectory that is more consistent with the visual connections
 
 ```{r unref-umap-traj-hsc2, fig.cap="Yet another UMAP plot of the merged HSC datasets, where each point represents a cell and is colored by its _TSCAN_ pseudotime. The lines correspond to the edges of the MST across cluster centers."}
 pseudo.out2 <- quickPseudotime(merged, use.dimred="corrected", 
-    with.mnn="mnn", outgroup=TRUE, outscale=1.5)
+    dist.method="mnn", outgroup=TRUE, outscale=1.5)
 
 common.pseudo2 <- averagePseudotime(pseudo.out2$ordering)
 plotUMAP(merged, colour_by=I(common.pseudo2), 
