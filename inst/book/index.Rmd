@@ -1,5 +1,5 @@
 --- 
-title: "Orchestrating Single-Cell Analysis with Bioconductor: Workflows"
+title: "Single-Cell Analysis Workflows with Bioconductor"
 documentclass: book
 bibliography: ref.bib
 biblio-style: apalike
