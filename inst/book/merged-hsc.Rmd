@@ -147,11 +147,8 @@ which is simple and efficient but does not consider the variance of cells within
 It is entirely possible for two well-separated clusters to be closer than two adjacent clusters if the latter span a wider region of the coordinate space.
 
 ```{r trajectory}
-# Using a lower 'outscale' to avoid connecting more distant dots;
-# this is mostly to improve the aesthetics of the plot below.
 library(TSCAN)
-pseudo.out <- quickPseudotime(merged, use.dimred="corrected", 
-    outgroup=TRUE, outscale=1.5)
+pseudo.out <- quickPseudotime(merged, use.dimred="corrected", outgroup=TRUE)
 ```
 
 ```{r unref-umap-traj-hsc, fig.cap="Another UMAP plot of the merged HSC datasets, where each point represents a cell and is colored by its _TSCAN_ pseudotime. The lines correspond to the edges of the MST across cluster centers."}
@@ -176,7 +173,7 @@ Doing so yields a trajectory that is more consistent with the visual connections
 
 ```{r unref-umap-traj-hsc2, fig.cap="Yet another UMAP plot of the merged HSC datasets, where each point represents a cell and is colored by its _TSCAN_ pseudotime. The lines correspond to the edges of the MST across cluster centers."}
 pseudo.out2 <- quickPseudotime(merged, use.dimred="corrected", 
-    dist.method="mnn", outgroup=TRUE, outscale=1.5)
+    dist.method="mnn", outgroup=TRUE)
 
 common.pseudo2 <- averagePseudotime(pseudo.out2$ordering)
 plotUMAP(merged, colour_by=I(common.pseudo2), 
