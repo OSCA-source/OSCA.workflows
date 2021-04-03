@@ -1,1 +1,4 @@
 merged-pancreas.html,OSCA.multisample,
+merged-hsc.html,OSCA.multisample,
+filtered-human-pbmcs-10x-genomics.html,OSCA.multisample,human-pbmcs-10x-genomics.html
+pijuan-sala-chimeric-mouse-embryo-10x-genomics.html,OSCA.multisample,chimeric-mouse-embryo-10x-genomics.html
