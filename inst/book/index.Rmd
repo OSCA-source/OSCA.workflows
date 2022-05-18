@@ -5,7 +5,7 @@ bibliography: ref.bib
 biblio-style: apalike
 link-citations: yes
 favicon: "`r rebook::BiocFavicon()`"
-github-repo: LTLA/OSCA.workflows
+github-repo: OSCA-source/OSCA.workflows
 ---
 
 ```{r, echo=FALSE}
