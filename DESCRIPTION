@@ -1,12 +1,13 @@
 Package: OSCA.workflows
 Title: OSCA Workflows
 Version: 1.5.1
-Date: 2022-05-18
+Date: 2022-10-12
 Authors@R: c( 
-        person('Robert', 'Amezquita', role = c('aut')), 
-        person('Aaron', 'Lun', role = c('aut', 'cre'), email="infinite.monkeys.with.keyboards@gmail.com"), 
+        person('Robert', 'Amezquita', role = 'aut'), 
+        person('Aaron', 'Lun', role = 'aut', email="infinite.monkeys.with.keyboards@gmail.com"), 
         person('Stephanie', 'Hicks', role = 'aut'), 
-        person('Raphael', 'Gottardo', role = 'aut') 
+        person('Raphael', 'Gottardo', role = 'aut'),
+        person('Peter', 'Hickey', role = 'cre', email="peter.hickey@gmail.com")
     )
 Description: 
     Deploys the workflows of the "Orchestrating Single Cell Analysis with Bioconductor" book.
