@@ -91,7 +91,7 @@ set.seed(1000)
 clusters <- quickCluster(sce.pbmc)
 sce.pbmc <- computeSumFactors(sce.pbmc, cluster=clusters)
 altExp(sce.pbmc) <- computeMedianFactors(altExp(sce.pbmc))
-sce.pbmc <- logNormCounts(sce.pbmc, use_altexps=TRUE)
+sce.pbmc <- applySCE(sce.pbmc, logNormCounts)
 ```
 
 We generate some summary statistics for both sets of size factors:
@@ -154,7 +154,7 @@ pheatmap::pheatmap(log10(mod + 10), cluster_row=FALSE, cluster_col=FALSE,
 ```
 
 ```{r unref-tsne-pbmc-adt, fig.cap="Obligatory $t$-SNE plot of PBMC dataset based on its ADT expression values, where each point is a cell and is colored by the cluster of origin. Cluster labels are also overlaid at the median coordinates across all cells in the cluster."}
-plotTSNE(altExp(sce.pbmc), colour_by="label", text_by="label", text_col="red")
+plotTSNE(altExp(sce.pbmc), colour_by="label", text_by="label", text_colour="red")
 ```
 
 We perform some additional subclustering using the expression data to mimic an _in silico_ FACS experiment.
