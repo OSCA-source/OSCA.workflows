@@ -44,7 +44,8 @@ Depends: AnnotationHub,
     scRNAseq,
     scuttle,
     SingleR,
-    viridis
+    viridis,
+    celldex
 Suggests: 
     BiocManager,
     rmarkdown,

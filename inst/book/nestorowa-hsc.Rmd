@@ -171,6 +171,7 @@ stopifnot(all(c("Car2", "Hba-a2", "Hba-a1", "Hebp1") %in% rownames(aucs)))
 
 ```{r cell-annotation}
 library(SingleR)
+library(celldex)
 mm.ref <- MouseRNAseqData()
 
 # Renaming to symbols to match with reference row names.
