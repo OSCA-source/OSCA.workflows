@@ -145,14 +145,14 @@ markers <- findMarkers(sce.nest, colLabels(sce.nest),
 ```
 
 ```{r, echo=FALSE}
-cluster <- "8"
+cluster <- "10"
 ```
 
 To illustrate the manual annotation process, we examine the marker genes for one of the clusters.
 Upregulation of _Car2_, _Hebp1_ amd hemoglobins indicates that cluster `r cluster` contains erythroid precursors.
 
 ```{r unref-heat-nest-markers, fig.asp=1.5, fig.cap=sprintf("Heatmap of the AUCs for the top marker genes in cluster %s compared to all other clusters.", cluster)}
-chosen <- markers[['8']]
+chosen <- markers[['10']]
 best <- chosen[chosen$Top <= 10,]
 aucs <- getMarkerEffects(best, prefix="AUC")
 rownames(aucs) <- best$SYMBOL
@@ -189,7 +189,7 @@ pheatmap(log10(tab+10), color=viridis::viridis(100))
 ```
 
 ```{r, echo=FALSE}
-test <- tab[,"8"]
+test <- tab[,"10"]
 stopifnot(test["Erythrocytes"]/sum(test) > 0.9)
 ```
 
