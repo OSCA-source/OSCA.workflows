@@ -31,13 +31,16 @@ rownames(sce.seger) <- ens.id[keep]
 ```
 
 We simplify the names of some of the relevant column metadata fields for ease of access.
-Some editing of the cell type labels is necessary for consistency with other data sets.
+Some editing of the cell type labels is necessary for consistency with other data sets,
+and old versions of these data.
 
 ```{r sample-annotation}
 emtab.meta <- colData(sce.seger)[,c("cell type", "disease",
     "individual", "single cell well quality")]
 colnames(emtab.meta) <- c("CellType", "Disease", "Donor", "Quality")
+emtab.meta$OldDonor <- gsub("(.*)_.*", "\\1", colnames(sce.seger))
 colData(sce.seger) <- emtab.meta
+
 
 sce.seger$CellType <- gsub(" cell", "", sce.seger$CellType)
 sce.seger$CellType <- paste0(
@@ -62,7 +65,7 @@ library(scater)
 stats <- perCellQCMetrics(sce.seger)
 qc <- quickPerCellQC(stats, percent_subsets="altexps_ERCC_percent",
     batch=sce.seger$Donor,
-    subset=!sce.seger$Donor %in% c("HP1504901", "HP1509101"))
+    subset=!sce.seger$OldDonor %in% c("HP1504901", "HP1509101"))
 
 sce.seger <- sce.seger[,!(qc$discard | low.qual)]
 ```
