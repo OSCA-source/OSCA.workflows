@@ -1,7 +1,7 @@
 Package: OSCA.workflows
 Title: OSCA Workflows
-Version: 1.15.0
-Date: 2024-04-17
+Version: 1.15.1
+Date: 2025-01-10
 Authors@R: c( 
         person('Robert', 'Amezquita', role = 'aut'), 
         person('Aaron', 'Lun', role = 'aut', email="infinite.monkeys.with.keyboards@gmail.com"), 
