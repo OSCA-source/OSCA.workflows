@@ -153,8 +153,8 @@ plotTSNE(sce.pbmc, colour_by="label")
 ## Interpretation
 
 ```{r, echo=FALSE}
-chosen.mono <- "2"
-chosen.macro <- "14"
+chosen.mono <- "4"
+chosen.macro <- "13"
 ```
 
 ```{r}
@@ -166,7 +166,7 @@ High expression of _CD14_, _CD68_ and _MNDA_ combined with low expression of _FC
 compared to macrophages in cluster `r chosen.macro` (Figure \@ref(fig:unref-mono-pbmc-markers)).
 
 ```{r}
-marker.set <- markers[["2"]]
+marker.set <- markers[["4"]]
 as.data.frame(marker.set[1:30,1:3])
 ```
 
