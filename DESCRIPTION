@@ -1,6 +1,6 @@
 Package: OSCA.workflows
 Title: OSCA Workflows
-Version: 1.16.0
+Version: 1.17.0
 Date: 2025-01-14
 Authors@R: c( 
         person('Robert', 'Amezquita', role = 'aut'), 
