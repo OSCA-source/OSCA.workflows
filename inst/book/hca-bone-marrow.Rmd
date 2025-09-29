@@ -189,15 +189,15 @@ markers.bone <- findMarkers(sce.bone, block = sce.bone$Donor,
     direction = 'up', lfc = 1, BPPARAM=bpp)
 ```
 
-We visualize the top markers for a randomly chosen cluster using a "dot plot" in Figure \@ref(fig:unref-hca-bone-dotplot).
+We visualize the top markers for a randomly chosen cluster using a heatmap in Figure \@ref(fig:unref-hca-bone-heatmap).
 The presence of upregulated genes like _LYZ_, _S100A8_ and _VCAN_ is consistent with a monocyte identity for this cluster.
 
 ```{r, echo=FALSE}
-cluster.choice <- "4"
+cluster.choice <- "2"
 ```
 
-```{r unref-hca-bone-dotplot, fig.cap=sprintf("Heatmap of log~2~-fold changes for the top marker genes (rows) of cluster %s compared to all other clusters (columns).", cluster.choice)}
-top.markers <- markers.bone[["4"]]
+```{r unref-hca-bone-heatmap, fig.cap=sprintf("Heatmap of log~2~-fold changes for the top marker genes (rows) of cluster %s compared to all other clusters (columns).", cluster.choice)}
+top.markers <- markers.bone[["2"]]
 best <- top.markers[top.markers$Top <= 10,]
 lfcs <- getMarkerEffects(best)
 
