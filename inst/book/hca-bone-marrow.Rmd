@@ -106,7 +106,7 @@ for (i in colnames(blocked.stats)) {
 
 ## Data integration
 
-Here we use multiple cores, randomized SVD and approximate nearest-neighbor detection to speed up this step.
+Here we use multiple cores, randomized SVD^[The randomized SVD may give slightly different results on different systems, so the MNN-corrected values may themselves vary across systems.] and approximate nearest-neighbor detection to speed up this step.
 
 ```{r integration}
 library(batchelor)
@@ -189,15 +189,22 @@ markers.bone <- findMarkers(sce.bone, block = sce.bone$Donor,
     direction = 'up', lfc = 1, BPPARAM=bpp)
 ```
 
-We visualize the top markers for a randomly chosen cluster using a heatmap in Figure \@ref(fig:unref-hca-bone-heatmap).
+We visualize the top markers for a randomly chosen cluster^[The exact cluster chosen varies across systems due to the MNN-corrected values themselves varying across systems.] using a heatmap in Figure \@ref(fig:unref-hca-bone-heatmap).
 The presence of upregulated genes like _LYZ_, _S100A8_ and _VCAN_ is consistent with a monocyte identity for this cluster.
 
 ```{r, echo=FALSE}
-cluster.choice <- "2"
+# NOTE: The exact cluster varies across systems due to the MNN-corrected values 
+#       themselves varying across systems. This bit of code aims to pick the 
+#       cluster with the intended 'monocyte' identity.
+cluster.choice <- which.max(
+  tapply(
+    colMeans(logcounts(sce.bone)[c("LYZ", "VCAN", "S100A8", "CTSS"), ]),
+    colLabels(sce.bone),
+    median))
 ```
 
 ```{r unref-hca-bone-heatmap, fig.cap=sprintf("Heatmap of log~2~-fold changes for the top marker genes (rows) of cluster %s compared to all other clusters (columns).", cluster.choice)}
-top.markers <- markers.bone[["2"]]
+top.markers <- markers.bone[[cluster.choice]]
 best <- top.markers[top.markers$Top <= 10,]
 lfcs <- getMarkerEffects(best)
 
